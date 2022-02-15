@@ -1,0 +1,20 @@
+<section class="container">
+  <h2 class="titulo">Cadastros</h2>
+<table class="tabela">
+  <thead class="tabela__cabecalho">
+    <th class="tabela__cabecalho_conteudo">Data</th>
+    <th class="tabela__cabecalho_conteudo">Nome</th>
+    <th class="tabela__cabecalho_conteudo">E-mail</th>
+  </thead>
+  <tbody *ngIf="cadastros?.length > 0; else listaVazia">
+    <tr class="tabela__linha" *ngFor="let cadastro of cadastros">
+      <td class="tabela__conteudo">{{cadastro.data  | date: medium}} </td>
+      <td class="tabela__conteudo">{{cadastro.nome}} </td>
+      <td class="tabela__conteudo">{{cadastro.email}} </td>
+    </tr>
+  </tbody>
+</table>
+</section>
+<ng-template #listaVazia>
+  <p>Nenhum cadastro</p>
+</ng-template>
